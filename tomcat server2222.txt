@@ -1,0 +1,24 @@
+tomcat server
+sudo su
+sudo apt-get update 
+sudo apt-get install -y default-jdk
+sudo mkdir /opt/tomcat
+cd /opt/tomcat
+sudo curl -O http://repo2.maven.org/maven2/org/apache/tomcat/tomcat/8.5.5/tomcat-8.5.5.tar.gz
+sudo tar -xvzf tomcat-8.5.5.tar.gz -C /opt/tomcat --strip-components=1
+
+sudo groupadd tomcat
+sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+sudo chgrp -R tomcat /opt/tomcat
+sudo chmod -R g+r conf
+sudo chmod g+x conf
+sudo chown -R tomcat webapps/ work/ temp/ logs/
+sudo update-java-alternatives -l
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
+sudo nano /etc/systemd/system/tomcat.service
+sudo systemctl daemon-reload
+sudo systemctl start tomcat
+sudo systemctl status tomcat
+sudo ufw allow 8080
+http://server_domain_or_IP:8080
+sudo systemctl enable tomcat

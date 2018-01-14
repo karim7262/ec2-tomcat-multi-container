@@ -1,0 +1,50 @@
+ 
+How to install Oracle Java JDK on Ubuntu Linux (14.04 LTS or 16.04 LTS)
+
+[adding java Repository and installing oracle java8 ]  
+sudo apt-add-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+ensure your JAVA_HOME variable has been set to:
+nano /etc/profile
+whereis jvm
+nano /etc/profile
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+[ installing Apache Tomcat Server on ubuntu 16.04
+
+Adding java Repository and installing oracle java8
+	
+1  sudo apt-get update
+2  sudo apt-add-repository ppa:webupd8team/java
+3  sudo apt-get update
+4  sudo apt-get install oracle-java8-installer
+5  java -version
+	
+	step 1 : login with root 
+	step 2 : update the system 
+		#apt-get update
+	step 3 :  install tomcat and other tomcat =ADDDNS
+		#apt-get install tomcat8
+		#apt-get install tomcat8-docs tomcat8-examples tomcat8-admin
+		
+	step 4 : start the services
+		#systemctl start tomcat8
+		#systemctl restart 	tomcat8
+		
+	step 5 : open web brower :
+		ipadd:8080
+	step 6 : open the file 
+
+		nano /var/lib/tomcat8/conf/tomcat8-users.xml	
+     add the following :
+	  <role rolename ="manager-gui"/>
+	  <role rolename ="admin-gui"/>
+	  <user username="yasin" passwoard="yasin" roles="manager-gui,admin-gui"/>
+	   save the file 
+	   step 7 :
+	    restart the tomcat8
+     #systemctl restart tomcat8
+		
+   

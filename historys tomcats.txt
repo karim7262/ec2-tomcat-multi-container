@@ -1,0 +1,182 @@
+
+apt-get -y update
+sudo apt-get install default-jdk
+sudo groupadd tomcat
+sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+cd /tmpsudo groupadd tomcat
+cd /tmp/
+curl -O http://repo2.maven.org/maven2/org/apache/tomcat/tomcat/8.5.5/tomcat-8.5.5.tar.gz
+sudo mkdir /opt/tomcat
+tar -xvzf tomcat-8.5.5.tar.gz -C /opt/tomcat --strip-components=1
+cd /opt/tomcat
+sudo chmod -R g+r conf
+sudo chmod g+x conf
+sudo chown -R tomcat webapps/ work/ temp/ logs/
+sudo update-java-alternatives -l
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
+sudo nano /etc/systemd/system/tomcat.service
+sudo systemctl daemon-reload
+sudo systemctl start tomcat
+sudo systemctl status tomcat
+sudo ufw allow 8080
+sudo systemctl enable tomcat
+sudo update-java-alternatives -1
+
+java-1.8.0-openjdk-amd64       1081       /usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+cd lib/
+cd ..
+cd bin/
+cd ..
+ls
+cd ..
+ls -a
+cd /home/ubuntu
+ls
+ls -a
+cd .bashrc
+nano .bashrc
+cd /home/ubuntu
+ls user
+ls -user
+ls -a
+ls /usr/lib/jvm/java-1.8.0-openjdk-amd64
+cd /opt/tomcat/
+ls -a
+cd bin/
+./startup.sh
+cd ..
+mkdir tomcatinstance1
+cp /opt/tomcat/conf /opt/tomcat/tomcatinstance1/
+cp -vR /opt/tomcat/conf /opt/tomcat/tomcatinstance1/
+ls instance
+ls tomcatinstance1/
+ls tomcatinstance1/conf/
+cp -vR /opt/tomcat/logs /opt/tomcat/tomcatinstance1
+ls /opt/tomcat/tomcatinstance1/logs/
+cp -vR /opt/tomcat/temp /opt/tomcat/tomcatinstance1
+ls /opt/tomcat/tomcatinstance1/temp/
+ls /opt/tomcat/temp/
+cp -vR /opt/tomcat/webapps /opt/tomcat/tomcatinstance1
+cp /opt/tomcat/work -vR /opt/tomcat/tomcatinstance1
+ls /opt/tomcat/tomcatinstance1/
+mkdir tomcatinstance2
+cp -vR /opt/tomcat/conf /opt/tomcat/tomcatinstance2
+ls /opt/tomcat/tomcatinstance2
+cp -vR /opt/tomcat/logs /opt/tomcat/
+cp -vR /opt/tomcat/logs /opt/tomcat/tomcatinstance2
+cp -vR /opt/tomcat/temp /opt/tomcat/tomcatinstance2
+cp -vR /opt/tomcat/webapps /opt/tomcat/tomcatinstance2
+cp -vR /opt/tomcat/work /opt/tomcat/tomcatinstance2
+ls /opt/tomcat/tomcatinstance2
+ls /opt/tomcat/tomcatinstance1
+cd tomcatinstance1/conf/
+nano server.xml
+sudo nano server.xml
+cd .
+cd ..
+cd
+cd ~
+sudo su
+cd /opt/tomcat/
+cd tomcatinstance2
+ls
+cd conf/
+sudo nano server.xml
+cd /
+cd /opt/tomcat/
+ls -a
+touch startup-instance1
+rm startup-instance1 startup-instance1.sh
+ls
+touch startup-instance1.sh
+ls
+nano startup-instance1.sh
+history
+touch shutdown-instance1.ssh
+nano shutdown-instance1.ssh
+touch startup-instance2.sh
+touch shutdown-instance2.sh
+mv shutdown-instance1.ssh shutdown-instance1.sh
+ls -a
+nano startup-instance1
+ls -a
+cd /opt/tomcat/
+ls -a
+ls /lib
+ls /bin
+ls lib
+ls conf
+whereis jdk
+whereis java
+ls -a
+cd ..
+ls user
+cd ..
+sudo su
+cd /opt/tomcat/
+ls -a
+tomcatinstance1
+ls startup-instance1.sh
+cat startup-instance1.sh
+ls -a
+nano startup-instance1.sh
+nano startup-instance2.sh
+nano shutdown-instance1.sh
+export CATLINA_BASE=/opt/tomcat/tomcatinstance1
+nano shutdown-instance2.sh
+ls -a
+ls shutdown-instance1
+chmod 777 startup-instance1 startup-instance2
+chmod 777 startup-instance1
+chmod 777 startup-instance1.sh
+chmod 777 shutdown-instance1.sh
+chmod 777 stexport CATLINA_BASE=/opt/tomcat/tomcatinstance1
+cd $CATLINA_HOME/bin
+./shutdown.sh
+cd /opt/tomcat/
+ls -a
+chmod 777 shutdown-instance2.sh
+./startup-instance1.sh
+./startup-instance1.swp
+ls
+/.startuo-instance1
+/.startup-instance1
+clear
+ls -a
+./startup-instance1.sh
+nano startup-instance1.sh
+./startup-instance1.sh
+cp startup-instance1.sh s1.sh
+ll s1.sh
+./s1.sh
+rm s1.sh
+clear
+cat startup-instance1.sh
+ls
+ls bin/startup.sh
+nano startup-instance1.sh
+./startup-instance1.sh
+cd $CATALINA_HOME
+cd /opt/tomcat
+nano startup-instance1.sh
+./startup-instance1.sh
+echo $CATALINA_HOME
+echo "$CATALINA_HOME"
+printf "%s\n" $CATALINA_HOME
+set $CATALINA_HOME=/opt/tomcat
+echo "$CATALINA_HOME"
+printf "%s\n" $CATALINA_HOME
+cd /
+cd $CATALINA_HOME
+export $CATALINA_HOME=/opt/tomcat
+export $CATALINA_HOME=/opt/tomcat/
+export $CATALINA_HOME="/opt/tomcat/"
+export $CATALINA_HOME=/opt/tomcat
+set
+clear
+set
+set $CATALINA_HOME
+echo $CATALINA_HOME
+exit
+history

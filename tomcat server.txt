@@ -1,0 +1,18 @@
+tomtact server 
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04
+sudo apt-get update
+sudo apt-get install default-jdk
+sudo groupadd tomcat
+
+if shutdown then send email
+kill -0 `cat $CATALINA_PID` > /dev/null 2>&1
+if [ $? -gt 0 ]
+then
+    echo "Check tomcat" | mailx -s "Tomcat not running" support@dom.com
+fi
+
+
+cd apache/apache-tomcat-7.0.12/
+apache/apache-tomcat-7.0.125$ cd bin/
+/startup.sh
+service xml
