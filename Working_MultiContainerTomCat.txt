@@ -1,0 +1,33 @@
+sudo apt-get update && sudo apt-get install default-jre -y 
+sudo wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz && sudo tar -xvf apache-tomcat-8.5.5.tar.gz
+sudo mv apache-tomcat-8.5.5 tomcat855 
+sudo vim tomcat855/conf/server.xml
+
+<Service name="webapps2">
+	<Connector port="7070" maxHttpHeaderSize="7192"
+	maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+	enableLookups="false" redirectPort="7443" acceptCount="100"
+	connectionTimeout="20000" disableUploadTimeout="true" />
+	<Connector port="7072" 
+	enableLookups="false" redirectPort="7043" protocol="AJP/1.3" />
+	<Engine name="webapps2" defaultHost="localhost">
+	<Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+	resourceName="UserDatabase"/>
+	<Host name="localhost" appBase="webapps2"
+	unpackWARs="true" autoDeploy="true"
+	xmlValidation="false" xmlNamespaceAware="false">
+	</Host>
+	</Engine>
+</Service>
+
+cd tomcat855
+sudo mkdir webapps2
+sudo chown -R ubuntu:ubuntu webapps/*
+sudo cp -r webapps/* webapps2/
+sudo ./bin/startup.sh
+tail -25f ./logs/catalina.out 
+
+http://172.16.1.39:8080   [1st Web App]
+http://172.16.1.39:7070   [2nd Web App]
+
+
